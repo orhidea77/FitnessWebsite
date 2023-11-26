@@ -152,18 +152,6 @@ h1 {
 	color: white;
 }
 
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-  
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 #Prices{
   padding: 40px;
 	text-align: center;
