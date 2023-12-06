@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In and Registration Form</title>
+    <link rel="stylesheet" href="forma.css"/>
+  </head>
+  <body>
+    <div class="container">
+        <div class = "form-box">
+            <h1 id="title">Sign Up</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="Emri">
+                        <input type = "text" placeholder="Name">
+                </div>
+                <br>
+                <div class="input-field">
+                    <input type = "email" placeholder="Email">
+                </div>
+                <br>
+                <div class="input-field">
+                    <input type = "password" placeholder="Password">
+                </div>
+                <br>
+                <div class="input-field" id="Passwordi">
+                    <input type = "password" placeholder="Confirm Password">
+                </div>
+                <br>
+                <p>Forgot Password? <a href = "#">Click Here!</a></p>
+                <br>
+                <div class ="btn">
+                    <button type = "button" id="signUpButton">Sign Up</button>
+                    <button type = "button" id="signInButton" class="disable">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<script>
+
+let signUpButton = document.getElementById("signUpButton");
+let signInButton = document.getElementById("signInButton");
+let fieldEmri = document.getElementById("fieldEmri");
+let title = document.getElementById("title");
+
+signInButton.onclick = function(){
+    Emri.style.maxHeight = "0";
+    Passwordi.style.maxHeight = "0";
+    title.innerHTML = "Sign In";
+    signUpButton.classList.add("disable");
+    signInButton.classList.remove("disable");
+}
+
+signUpButton.onclick = function(){
+    Emri.style.maxHeight = "60px";
+    Passwordi.style.maxHeight = "60px";
+    title.innerHTML = "Sign Up";
+    signUpButton.classList.remove("disable");
+    signInButton.classList.add("disable");
+}
+
+
+</script>
+  </body>
+</html>
