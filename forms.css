@@ -1,3 +1,10 @@
+/*phones and tablets*/
+@media only screen and (min-width: 600px){
+
+}
+/*laptops and desktop */
+@media only screen and (min-width:992px) {
+}
 * {
 	box-sizing: border-box;
 }
