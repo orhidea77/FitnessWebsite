@@ -61,6 +61,39 @@ signUpButton.onclick = function(){
     signInButton.classList.add("disable");
 }
 
+function validateForm(){
+			var name = document.getElementById('name').value;
+			var nameRegex = /^[a-zA-Z\s]+$/;
+			if (!nameRegex.test(name)){
+				alert('Please enter a valid name.');
+				return false;
+			}
+
+			var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if(!emailRegex.test(email)){
+				alert('Please enter a valid email address.');
+				return false;
+			}
+
+			if(password.length < 8){
+				alert('Password must be at least 8 characters');
+				return false;
+			}
+
+			if(password !== confirmpassword){
+				alert('Password match');
+				return false;
+			}
+		} 
+
+        let form = document.getElementById("signUpButton");
+
+        form.addEventListener ("submit",(e) => {
+            e.preventDefault();
+            let = document.getElementById('Emri');
+            let password = document.getElementById('password')
+        })
+
 
 </script>
   </body>
