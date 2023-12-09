@@ -63,6 +63,9 @@ const form = document.querySelector("form"),
             return passField.classList.add("invalid");
         }
         passField.classList.remove("invalid");
+
+    window.location.href = 'index.html';
+    return false;
     }
 
     form.addEventListener("submit", (e) => {
