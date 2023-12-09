@@ -105,6 +105,9 @@ const form = document.querySelector("form"),
             return cPassField.classList.add("invalid");
         }
         cPassField.classList.remove("invalid");
+
+    window.location.href = 'index.html';
+    return false;
     }
 
     form.addEventListener("submit", (e) => {
