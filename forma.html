@@ -11,90 +11,155 @@
     <div class="container">
         <div class = "form-box">
             <h1 id="title">Sign Up</h1>
-            <form>
-                <div class="input-group">
-                    <div class="input-field" id="Emri">
-                        <input type = "text" placeholder="Name">
+            <form action="#">
+                <div class = "field">
+                <div class="input-field name-field">
+                    <div class="input-field">
+                    <input type = "text" placeholder="Name" class="name"/>
+                </div>
+                    <span class="error name-error">
+                        <p class="error-text">Please enter a valid Name.</p>
+                    </span>
                 </div>
                 <br>
+                <div class="field email-field">
                 <div class="input-field">
-                    <input type = "email" placeholder="Email">
+                    <input type = "email" placeholder="Email" class="email"/>
+                </div>
+                    <span class="error email-error">
+                    <p class="error-text">Please enter a valid Email.</p>
+                    </span>
                 </div>
                 <br>
+                <div class="field create-password">
                 <div class="input-field">
-                    <input type = "password" placeholder="Password">
+                    <input type = "password" placeholder="Password" class="password"/>
+                </div>
+                <span class="error password-error">
+                    <p class="error-text"> Please enter atleast 8 characters with number, symbol, small and capital letter.</p>
+                </span>
                 </div>
                 <br>
-                <div class="input-field" id="Passwordi">
-                    <input type = "password" placeholder="Confirm Password">
+                <div class="field confirm-password">
+                <div class="input-field">
+                    <input type = "password" placeholder="Confirm Password" class="cPassword" />
+                </div>
+                <span class="error cPassword-error">
+                    <p class="error-text">Password does not match.</p>
+                </span>
                 </div>
                 <br>
                 <p>Forgot Password? <a href = "#">Click Here!</a></p>
                 <br>
-                <div class ="btn">
-                    <button type = "button" id="signUpButton">Sign Up</button>
-                    <button type = "button" id="signInButton" class="disable">Sign In</button>
+                <div class ="button">
+                    <input type="submit" value="Sign Up" />
                 </div>
+                <br>
+                <br>
+                <p>Already have an Account?</p>
+                <br>
+                <div class="btn">
+                <button onclick = "window.location.href='login.html';">Log In</button>
             </form>
         </div>
     </div>
 <script>
 
-let signUpButton = document.getElementById("signUpButton");
-let signInButton = document.getElementById("signInButton");
-let fieldEmri = document.getElementById("fieldEmri");
-let title = document.getElementById("title");
+const form = document.querySelector("form"),
+      nameField = form.querySelector(".name-field"),
+      nameInput = nameField.querySelector(".name"),
+      emailField = form.querySelector(".email-field"),
+      emailInput = emailField.querySelector(".email"),
+      passField = form.querySelector(".create-password"),
+      passInput = passField.querySelector(".password"),
+      cPassField = form.querySelector(".confirm-password"),
+      cPassInput = cPassField.querySelector(".cPassword");
 
-signInButton.onclick = function(){
-    Emri.style.maxHeight = "0";
-    Passwordi.style.maxHeight = "0";
-    title.innerHTML = "Sign In";
-    signUpButton.classList.add("disable");
-    signInButton.classList.remove("disable");
-}
 
-signUpButton.onclick = function(){
-    Emri.style.maxHeight = "60px";
-    Passwordi.style.maxHeight = "60px";
-    title.innerHTML = "Sign Up";
-    signUpButton.classList.remove("disable");
-    signInButton.classList.add("disable");
-}
+    function name(){
+        const namePattern = /^[A-Z][a-z]{3,8}$/;
+        if(!nameInput.value.match(namePattern)){
+            return nameField.classList.add("invalid");
+        }
+        nameField.classList.remove("invalid");
+      }
+    function checkEmail(){
+        const emailpattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if(!emailInput.value.match(emailpattern)){
+            return emailField.classList.add("invalid");
+        }
+        emailField.classList.remove("invalid");
+      }
 
-function validateForm(){
-			var name = document.getElementById('name').value;
-			var nameRegex = /^[a-zA-Z\s]+$/;
-			if (!nameRegex.test(name)){
-				alert('Please enter a valid name.');
-				return false;
-			}
+    function createPass(){
+        const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
 
-			var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-			if(!emailRegex.test(email)){
-				alert('Please enter a valid email address.');
-				return false;
-			}
+        if(!passInput.value.match(passPattern)){
+            return passField.classList.add("invalid");
+        }
+        passField.classList.remove("invalid");
+    }
 
-			if(password.length < 8){
-				alert('Password must be at least 8 characters');
-				return false;
-			}
+    function confirmPassword(){
+        if(passInput.value !== cPassInput.value || cPassInput.value === ""){
+            return cPassField.classList.add("invalid");
+        }
+        cPassField.classList.remove("invalid");
+    }
 
-			if(password !== confirmpassword){
-				alert('Password match');
-				return false;
-			}
-		} 
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        name();
+        checkEmail();
+        createPass();
+        confirmPassword();
+    });
+  //  function validateForm(){
+  //      let nameInput = document.getElementById('Emri');
+   //     let nameError = document.getElementById('nameError');
+   //     let emailInput = document.getElementById('email');
+   //     let emailError = document.getElementById('emailError');
+   //     let passwordInput = document.getElementById('password');
+   //     let passwordError = document.getElementById('passwordError');
 
-        let form = document.getElementById("signUpButton");
+    //    nameError.innerText = '';
+    //  emailError.innerText = '';
 
-        form.addEventListener ("submit",(e) => {
-            e.preventDefault();
-            let = document.getElementById('Emri');
-            let password = document.getElementById('password')
-        })
+     //   if(!nameRegex.test(nameInput.value)){
+       //     nameError.innerText = 'invalid name';
+         //   return;
+       // }
+       // if(!emailRegex.test(emailInput.value)){
+         //   emailError.innerText = 'invalid email';
+           // return;
+       // }
+       // if(password !== confirmpassword){
+		//		alert('Password does not match');
+		//		return false;
+		//	}
 
+       // alert('form submitted succesfully!');
+   // }
+   
+//let signUpButton = document.getElementById("signUpButton");
+//let signInButton = document.getElementById("signInButton");
+
+//signInButton.onclick = function(){
+  //  Emri.style.maxHeight = "0";
+    //Passwordi.style.maxHeight = "0";
+ //   title.innerHTML = "Sign In";
+ //   signUpButton.classList.add("disable");
+ //   signInButton.classList.remove("disable");
+//}
+
+//signUpButton.onclick = function(){
+  //  Emri.style.maxHeight = "60px";
+   // Passwordi.style.maxHeight = "60px";
+   // title.innerHTML = "Sign Up";
+   // signUpButton.classList.remove("disable");
+   // signInButton.classList.add("disable");
+//}
 
 </script>
-  </body>
+</body>
 </html>
