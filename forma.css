@@ -13,15 +13,61 @@
     position: relative;
 }
 
+form .input-field{
+    position: relative;
+    height: 55px;
+    width: 100%;
+}
+
+.input-field input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+}
+
+.field .error{
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    color: red;
+    font-size: 13px;
+    display: none;
+}
+
+.button{
+    border-radius: 15px;
+	background-color: rgb(10, 39, 69);
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.button input{
+    color: white;
+    font-size: 13px;
+	font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.button input:hover{
+    background-color: rgb(12, 50, 91);;
+}
+
+.invalid .error{
+    display: flex;
+}
+
 .form-box{
     width: 90%;
-    max-width: 450px;
+    max-width: 420px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     background-color: white;
-    padding: 50px 60px 70px;
+    padding: 20px 30px 20px;
     text-align: center;
 }
 
@@ -64,7 +110,7 @@ input{
 
 form p{
     text-align: center;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 form p a{
@@ -73,23 +119,11 @@ form p a{
 }
 
 .btn{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.btn button{
-    flex-basis: 48%;
-    background: rgba(0,0,50,0.8);
+    border-radius: 15px;
     color: white;
-    height: 40px;
-    border-radius: 20px;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-}
-
-.btn button.disable{
-    background: rgb(218, 215, 215);
-    color: rgba(0,0,50,0.8);
+	background-color: rgb(10, 39, 69);
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
 }
