@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekti Web</title>
+    <link rel="stylesheet" href="index.css"/>
+  </head>
+  <body>
+    <section id="banner">
+      <img src="logo.png" class="logo">
+      <div class = "banner-text">
+        <h1>FITNESS</h1>
+        <p>We don’t need to be perfect… we just need to get started.</p>
+        <div class="banner-btn">
+          <a href="#"><span></span>Find Out</a>
+          <a href="results.html"><span></span>Read More</a>
+        </div>
+      </div>
+    </section>
+    <div id="sideNav">
+      <nav>
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">CONTACT US</a></li>
+          <form action="forma.html">
+            <button type="submit">LOG IN</button>
+          </form>
+        </ul>
+      </nav>
+    </div>
+    <div id="menuBtn">
+      <img src="menu.png" id="menu">
+    </div>
+
+    <section id = "about">
+      <div class = "title-text">
+        <p>ABOUT</p>
+        <br>
+        <h1>Why Choose Us?</h1>
+      </div>
+      <div class="about-box">
+        <div class="about">
+          <h1>About Us</h1>
+          <div class="about-d">
+            <div class="about-text">
+              <p>Welcome to "First We Lift" where fitness meets community! 
+                 At "First We Lift", we believe that a healthy lifestyle is the foundation for a fulfilling life. 
+                 Our mission is to empower individuals of all fitness levels to achieve their goals, foster a sense of belonging, 
+                 and inspire a lifelong commitment to health and wellness.</p>
+            </div>
+          </div>
+          <h1>Who We Are</h1>
+          <div class="about-d">
+            <div class="about-text">
+              <p>At "First We Lift", we are a passionate team of fitness enthusiasts, certified trainers, and health experts dedicated to helping you achieve your fitness goals. Whether you're a seasoned athlete or just starting your fitness journey, we are here to support and guide you every step of the way.</p>
+            </div>
+          </div>
+          <h1>Our Commitment</h1>
+          <div class="about-d">
+            <div class="about-text">
+              <p>We are committed to helping you transform your life through fitness. Whether your goal is to lose weight, build muscle, improve flexibility, or simply boost your overall well-being, we are here to help you succeed. Our commitment extends beyond just workouts – we aim to be a reliable resource for all aspects of your fitness journey.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-img">
+          <img src="Q.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="title-text">
+        <p>SERVICES</p>
+        <br>
+        <h1>Where Motivation Meets Movement</h1>
+      </div>
+      <div class="services-box">
+        <div class="pt-service">
+          <img src="personal-training.jpeg">
+          <div class="overlay"></div>
+          <div class="services-d">
+            <h3>Personal Training</h3>
+            <hr>
+            <p>Personal training is a dedicated fitness partnership where our certified trainer works closely with you individual to achieve specific health and fitness goals.</p>
+            <br>
+            <button onclick="window.location.href='forma.php';">Register Here!</button>
+          </div>
+        </div>
+        <div class="y-service">
+          <img src="yoga.jpg">
+          <div class="overlay"></div>
+          <div class="services-d">
+            <h3>Yoga & Pilates</h3>
+            <hr>
+            <p>These exercises are mind-body exercise system that emphasizes strength,flexibility and overall body conditioning.</p>
+            <br>
+            <button onclick="window.location.href='forma.php';">Register Here!</button>
+          </div>
+        </div>
+        <div class="c-service">
+          <img src="cross-fit.jpg">
+          <div class="overlay"></div>
+          <div class="services-d">
+            <h3>Cross Fit</h3>
+            <hr>
+            <p>CrossFit is a high-intensity fitness program that combines elements of weightlifting, cardiovascular exercise and gymnastics.</p>
+            <br>
+            <button onclick="window.location.href='forma.php';">Register Here!</button>
+          </div>
+        </div>
+        <div class="st-service">
+          <img src="strength-training.jpg">
+          <div class="overlay"></div>
+          <div class="services-d">
+            <h3>Strength Training</h3>
+            <hr>
+            <p>This training involves resistance exercises, such as lifting weights or using resistance bands, to work against a force and challenge the muscles.</p>
+            <br>
+            <button onclick="window.location.href='forma.php';">Register Here!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- <section id="results">
+      <div class="title-text">
+        <p>RESULTS</p>
+        <h1>Strive for progress, not perfection</h1>
+      </div>
+      <div class="result-row">
+        <div class ="result-col">
+          <p>oiuytrewqaZSDFGHJKMNBVCXSDERFTYU</p>
+        </div>
+        <div class="result-col">
+          <p>oiuytrewqaZSDFGHJKMNBVCXSDERFTYU</p>
+        </div>
+        <div class="result-col">
+          <p>oiuytrewqaZSDFGHJKMNBVCXSDERFTYU</p>
+        </div>
+      </div> 
+     </section>-->
+
+     <section id="prices">
+      <div class="title-text">
+        <p>MEMBERSHIP PRICES</p>
+        <br>
+        <h1>Choose the plan that suits your lifestyle and goals</h1>
+      </div>
+      <div class="pricing">
+        <div class="plan">
+          <h2>Basic</h2>
+          <br>
+          <div class="price">25€ / month</div>
+          <br>
+          <ul class="features">
+            <li><i class="fas fa-check-circle"></i> 1 Person</li>
+            <li><i class="fas fa-check-circle"></i> 12 Months</li>
+            <li><i class="fas fa-check-circle"></i> Unlimited Check in-s</li>
+          </ul>
+          <br>
+          <br>
+          <button onclick="window.location.href='forma.html';">Start Now!</button>
+        </div>
+        <div class="plan standard">
+          <h2>Standard</h2>
+          <br>
+          <div class="price">50€ / month</div>
+          <br>
+          <ul class="features">
+            <li><i class="fas fa-check-circle"></i> 1 Person</li>
+            <li><i class="fas fa-check-circle"></i> 12 Months</li>
+            <li><i class="fas fa-check-circle"></i> Personal Trainer</li>
+            <li><i class="fas fa-check-circle"></i> Unlimited Check in-s</li>
+          </ul>
+          <br>
+          <button onclick="window.location.href='forma.html';">Start Now!</button>
+        </div>
+        <div class="plan">
+          <h2>Premium</h2>
+          <br>
+          <div class="price">100€ / month</div>
+          <br>
+          <ul class="features">
+            <li><i class="fas fa-check-circle"></i> 1 Person</li>
+            <li><i class="fas fa-check-circle"></i> 12 Months</li>
+            <li><i class="fas fa-check-circle"></i> Personal Trainer</li>
+            <li><i class="fas fa-check-circle"></i> Meal Plan</li>
+            <li><i class="fas fa-check-circle"></i> Unlimited Check in-s</li>
+          </ul>
+          <br>
+          <button onclick="window.location.href='forma.html';">Start Now!</button>
+        </div>
+      </div>
+    </div>
+     </section>
+
+     <section id="footer">
+      <img src="f.png" class="footer-img">
+      <div class="title-text">
+        <p>CONTACT</p>
+        <h1></h1>
+      </div>
+      <div class="footer-row">
+        <div class="footer-left">
+          <h1>Opening Hours</h1>
+          <p>Monday to Friday - 6am to 12am</p>
+          <p>Saturday and Sunday - 10am to 11pm</p>
+        </div>
+        <div class="footer-right">
+          <h1>Get In Touch</h1>
+          <p>Email: firstwelift@gmail.com</p>
+          <p>Tel:+383 44/123-456</p>
+        </div>
+      </div>
+
+      <div class="social">
+        <img src="facebook.png">
+        <img src="twitter.png">
+        <img src="instagram.png">
+        <p>Copyright 2023 First We Lift Company. All rights reserved.</p>
+        <p>Designed by Orhidea Qadraku</p>
+      </div>
+     </section>
+
+
+    <script>
+      var menuBtn = document.getElementById("menuBtn")
+      var menuBtn = document.getElementById("menuBtn")
+      var menu = document.getElementById("menu")
+
+      menuBtn.onclick = function(){
+        if(sideNav.style.right == "-250px"){
+            sideNav.style.right = "0";
+            menu.src = "close.png";
+        }
+        else{
+          sideNav.style.right = "-250px";
+          menu.src = "menu.png";
+        }
+      }
+    </script>
+  </body>
