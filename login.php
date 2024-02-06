@@ -1,125 +1,73 @@
-<?php
-
-@include 'konfigurimi.php';
-
-session_start();
-
-if(isset($_POST['submit'])){
-
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
-
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
-
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0){
-
-      $row = mysqli_fetch_array($result);
-
-      if($row['user_type'] == 'admin'){
-
-         $_SESSION['admin_name'] = $row['name'];
-         header('location:admin.php');
-
-      }elseif($row['user_type'] == 'user'){
-
-         $_SESSION['user_name'] = $row['name'];
-         header('location:index.php');
-
-      }
-     
-   }else{
-      $error[] = 'incorrect email or password!';
-   }
-
-};
+<?php 
+   session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylee.css">
+    <script>
+        function preventBack(){window.history.forward()};
+        setTimeout("preventBack()",0);
+        window.onunload=function(){null;}
+    </script>
+    <title>Login</title>
+</head>
+<body>
+      <div class="container">
+        <div class="box form-box">
+            <?php 
+             
+              include("configg.php");
+              if(isset($_POST['submit'])){
+                $email = mysqli_real_escape_string($con,$_POST['email']);
+                $password = mysqli_real_escape_string($con,$_POST['password']);
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In and Registration Form</title>
-    <link rel="stylesheet" href="login.css"/>
-  </head>
-  <body>
-    <div class="container">
-        <div class = "form-box">
-            <h1 id="title">Log In</h1>
-            <form action="#">
-                <div class = "field">
-                <div class="input-field name-field">
-                    <div class="input-field">
-                    <input type = "text" placeholder="Name" class="name"/>
+                $result = mysqli_query($con,"SELECT * FROM users WHERE Email='$email' AND Password='$password' ") or die("Select Error");
+                $row = mysqli_fetch_assoc($result);
+
+                if(is_array($row) && !empty($row)){
+                    $_SESSION['valid'] = $row['email'];
+                    $_SESSION['name'] = $row['name'];
+                    $_SESSION['password'] = $row['password'];
+                }else{
+                    echo "<div class='message'>
+                      <p>Wrong Username or Password</p>
+                       </div> <br>";
+                   echo "<a href='index.php'><button class='btn'>Go Back</button>";
+         
+                }
+                if(isset($_SESSION['valid'])){
+                    header("Location: index.php");
+                }
+              }else{
+
+            
+            ?>
+            <header>Login</header>
+            <form action="" method="post">
+                <div class="field input">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" autocomplete="off" required>
                 </div>
-                    <span class="error name-error">
-                        <p class="error-text">Please enter a valid Name.</p>
-                    </span>
+
+                <div class="field input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" autocomplete="off" required>
                 </div>
-                <br>
-                <div class="field create-password">
-                <div class="input-field">
-                    <input type = "password" placeholder="Password" class="password"/>
+
+                <div class="field">
+                    
+                    <input type="submit" class="btn" name="submit" value="Login" required>
                 </div>
-                <span class="error password-error">
-                    <p class="error-text"> Please enter atleast 8 characters with number, symbol, small and capital letter.</p>
-                </span>
+                <div class="links">
+                    Don't have account? <a href="registerr.php">Sign Up Now</a>
                 </div>
-                <br>
-                <br>
-                <p>Forgot Password? <a href = "#">Click Here!</a></p>
-                <br>
-                <div class ="button">
-                   <input type="submit" value="Log In"/>
-                </div>
-                <br>
-                <p>Don't have an Account?</p>
-                <br>
-                <div class="btn">
-                <button onclick = "window.location.href='forma.html';">Sign Up</button>
             </form>
         </div>
-    </div>
-<script>
-
-const form = document.querySelector("form"),
-      nameField = form.querySelector(".name-field"),
-      nameInput = nameField.querySelector(".name"),
-      passField = form.querySelector(".create-password"),
-      passInput = passField.querySelector(".password");
-
-    function name(){
-        const namePattern = /^[A-Z][a-z]{3,8}$/;
-        if(!nameInput.value.match(namePattern)){
-            return nameField.classList.add("invalid");
-        }
-        nameField.classList.remove("invalid");
-      }
-
-    function createPass(){
-        const passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
-
-        if(!passInput.value.match(passPattern)){
-            return passField.classList.add("invalid");
-        }
-        passField.classList.remove("invalid");
-
-    window.location.href = 'index.php';
-    return false;
-    }
-
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        name();
-        createPass();
-    });
-
-</script>
+        <?php } ?>
+      </div>
 </body>
 </html>
