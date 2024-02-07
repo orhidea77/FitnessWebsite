@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+.table{
+    width: 100%;
+}
+
+.tab-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(209, 204, 204);
+}
+
+.tab-header p{
+    color: black;
+}
+
+button{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.add{
+    padding: 10px 20px;
+    color: white;
+    background-color: rgb(10, 39, 69);
+}
+
+input{
+    padding: 10px 20px;
+    margin: 0 10px;
+    outline: none;
+    border: 1px rgb(10, 39, 69);
+    border-radius:6px;
+    color: rgb(10, 39, 69);
+}
+
+::placeholder{
+    color: rgb(10, 39, 69);
+}
+
+.tab-section{
+    height: 650px;
+    overflow: auto;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+    min-width: 1000px;
+    border-collapse: collapse;
+}
+
+thead th{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    color: rgb(180, 179, 179);
+    font-size: 15px;
+}
+
+th,td{
+    border-bottom: 1px solid rgb(197, 193, 193);
+    padding: 10px 20px;
+    word-break: break-all;
+    text-align: center;
+}
+
+tr:hover td{
+    color: rgb(21, 83, 150);
+    cursor: pointer;
+    background-color: white;
+}
